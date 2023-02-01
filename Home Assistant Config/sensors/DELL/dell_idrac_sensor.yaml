@@ -1,0 +1,137 @@
+############################################################
+#
+# Monitoring Dell R720 iDRAC 7
+#
+# I am using iDRAC enterprise version "DRAC7/8 with Lifecycle Controller Version 2.65.65.65"
+# iDRAC with Lifecycle Controller v. 2.65.65.65
+# https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=0ghf4&oscode=naa&productcode=poweredge-r720
+#
+#
+# Baseoid's discovered through the use of trial and error
+# and free scanning tool Paessler SNMP Tester.
+# https://www.paessler.com/tools/snmptester
+#
+############################################################
+
+#sensor:
+############################################################
+# SNMP Sensors
+#
+# SNMP sensors are missing features so I create the Raw
+# sensors here and then create templated sensors with the
+# desired customisation above.
+#
+# Baseoid's discovered through the use of trial and error
+# and free scanning tool Paessler SNMP Tester.
+# https://www.paessler.com/tools/snmptester
+#
+############################################################
+# Raw Dell Server Power
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerPower
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.600.30.1.6.1.3
+  unit_of_measurement: W
+  #version: '2c'
+  accept_errors: true
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password
+
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerPSU1Current
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.600.30.1.6.1.1
+  unit_of_measurement: A
+  value_template: "{{((value | float) / 10) | float}}"
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password
+
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerPSU2Current
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.600.30.1.6.1.2
+  unit_of_measurement: A
+  value_template: "{{((value | float) / 10) | float}}"
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password
+
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerPSU1Voltage
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.600.20.1.6.1.26
+  unit_of_measurement: V
+  value_template: "{{((value | float) / 1000) | float}}"
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password
+
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerPSU2Voltage
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.600.20.1.6.1.27
+  unit_of_measurement: V
+  value_template: "{{((value | float) / 1000) | float}}"
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password
+
+# Raw Dell Server Thermals
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerInletTemperature
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.6.1.1
+  unit_of_measurement: °C
+  value_template: "{{((value | float) / 10) | float}}"
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password
+
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerExhaustTemperature
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.6.1.2
+  unit_of_measurement: °C
+  value_template: "{{((value | float) / 10) | float}}"
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerCPU1Temperature
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.6.1.3
+  unit_of_measurement: °C
+  value_template: "{{((value | float) / 10) | float}}"
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password
+
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerCPU2Temperature
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.20.1.6.1.4
+  unit_of_measurement: °C
+  value_template: "{{((value | float) / 10) | float}}"
+  scan_interval: 10
+  username: !secret ServerIdracIP_username
+  auth_key: !secret ServerIdracIP_password

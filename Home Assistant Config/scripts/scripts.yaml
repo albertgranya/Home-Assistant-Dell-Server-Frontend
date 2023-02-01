@@ -1,0 +1,28 @@
+server_start:
+  alias: Server start
+  sequence:
+    - service: shell_command.dell_server_start
+      data: {}
+  mode: single
+  icon: mdi:television-classic
+server_off:
+  alias: Server off
+  sequence:
+    - service: shell_command.dell_server_off
+      data: {}
+  mode: single
+  icon: mdi:television-classic-off
+server_graceful_shutdown:
+  alias: Server Gracefully Shutdown
+  sequence:
+    - service: shell_command.dell_server_gracefulshutdown
+      data: {}
+  mode: single
+  icon: mdi:television-classic-off
+server_graceful_restart:
+  alias: Server Gracefully Restart
+  sequence:
+    - service: shell_command.dell_server_gracefulrestart
+      data: {}
+  mode: single
+  icon: mdi:backup-restore

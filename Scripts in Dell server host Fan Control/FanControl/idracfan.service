@@ -1,0 +1,14 @@
+[Unit]
+Description=Idrac Mqtt fan controller
+After=network.target auditd.service
+[Service]
+
+ExecStart=/root/Mqtt/testpublisdomoticSubcribe.sh 3
+ExecReload=/root/Mqtt/testpublisdomoticSubcribe.sh 3
+Restart=on-failure
+
+Type=notify
+
+[Install]
+WantedBy=multi-user.target
+

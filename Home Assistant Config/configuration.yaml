@@ -1,0 +1,14 @@
+
+script: !include_dir_merge_named scripts/
+
+sensor: !include_dir_merge_list sensors/
+
+shell_command:
+  dell_server_start: >
+    curl -H 'Content-Type: application/json' -X POST --data '{"ResetType": "On"}' https://192.168.1.61/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset/ -u {{ states.sensor.dell_idrac_user.state }}:{{ states.sensor.dell_idrac_password.state }} --insecure
+  dell_server_off: >
+    "curl -H 'Content-Type: application/json' -X POST --data '{"ResetType": "Off"}' https://192.168.1.61/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset/ -u {{ states.sensor.dell_idrac_user.state }}:{{ states.sensor.dell_idrac_password.state }} --insecure
+  dell_server_gracefulshutdown: >
+    curl -H "Content-Type: application/json" -X POST --data '{"ResetType": "GracefulShutdown"}' https://192.168.1.61/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset/ -u {{ states.sensor.dell_idrac_user.state }}:{{ states.sensor.dell_idrac_password.state }} --insecure
+  dell_server_gracefulrestart: >
+    curl -H "Content-Type: application/json" -X POST --data '{"ResetType": "GracefulRestart"}' https://192.168.1.61/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset/ -u {{ states.sensor.dell_idrac_user.state }}:{{ states.sensor.dell_idrac_password.state }} --insecure

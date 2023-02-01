@@ -1,0 +1,105 @@
+- platform: netdata
+  host: '192.168.1.61'
+  port: '19999'
+  #port: '161'
+  name: DellServer
+  resources:
+    system:
+      data_group: system.cpu
+      element: system
+    system.ram:
+      data_group: system.ram
+      element: used
+    system.swap:
+      data_group: system.swap
+      element: used
+    net_drops.eno1:
+      data_group: net_drops.eno1
+      element: inbound
+    disk_space._mnt_data_used:
+      data_group: disk_space._mnt_data
+      element: used
+    ambient.temp:
+      data_group: ipmi.temperatures_c
+      element: i14_n5_r2
+    fan.rpm1:
+      data_group: ipmi.rpm
+      element: i48_n36_r2
+    fan.rpm2:
+      data_group: ipmi.rpm
+      element: i49_n37_r2
+    fan.rpm3:
+      data_group: ipmi.rpm
+      element: i50_n38_r2
+    fan.rpm4:
+      data_group: ipmi.rpm
+      element: i51_n39_r2
+    fan.rpm5:
+      data_group: ipmi.rpm
+      element: i52_n40_r2
+    amps.supply.1:
+      data_group: ipmi.amps
+      element: i148_n49_r2
+    amps.supply.2:
+      data_group: ipmi.amps
+      element: i149_n50_r2
+    volts.supply.1:
+      data_group: ipmi.volts
+      element: i150_n51_r2
+    volts.supply.2:
+      data_group: ipmi.volts
+      element: i151_n52_r2
+    watts:
+      data_group: ipmi.watts
+      element: i152_n61_r2
+    apconline:
+      data_group: apcupsd_local.online
+      element: online
+    apc_charge:
+      data_group: apcupsd_local.charge
+      element: battery_charge
+    apcupsd_load:
+      data_group: apcupsd_local.load
+      element: load
+    apcupsd_battery_voltage:
+      data_group: apcupsd_local.battery_voltage
+      element: battery_voltage
+    core0_temperature_1:
+      data_group: sensors.coretemp-isa-0001_temperature
+      element: coretemp-isa-0001_temp2
+    core0_temperature_2:
+      data_group: sensors.coretemp-isa-0001_temperature
+      element: coretemp-isa-0001_temp3
+    core0_temperature_3:
+      data_group: sensors.coretemp-isa-0001_temperature
+      element: coretemp-isa-0001_temp4
+    core0_temperature_4:
+      data_group: sensors.coretemp-isa-0001_temperature
+      element: coretemp-isa-0001_temp10
+    core0_temperature_5:
+      data_group: sensors.coretemp-isa-0001_temperature
+      element: coretemp-isa-0001_temp11
+    core0_temperature_6:
+      data_group: sensors.coretemp-isa-0001_temperature
+      element: coretemp-isa-0001_temp12
+    core1_temperature_1:
+      data_group: sensors.coretemp-isa-0000_temperature
+      element: coretemp-isa-0000_temp2
+    core1_temperature_2:
+      data_group: sensors.coretemp-isa-0000_temperature
+      element: coretemp-isa-0000_temp3
+    core1_temperature_3:
+      data_group: sensors.coretemp-isa-0000_temperature
+      element: coretemp-isa-0000_temp4
+    core1_temperature_4:
+      data_group: sensors.coretemp-isa-0000_temperature
+      element: coretemp-isa-0000_temp10
+    core1_temperature_5:
+      data_group: sensors.coretemp-isa-0000_temperature
+      element: coretemp-isa-0000_temp11
+    core1_temperature_6:
+      data_group: sensors.coretemp-isa-0000_temperature
+      element: coretemp-isa-0000_temp12
+    hassio_cpu_used:
+      data_group: cgroup_qemu.slice_101.scope.cpu
+      element: system

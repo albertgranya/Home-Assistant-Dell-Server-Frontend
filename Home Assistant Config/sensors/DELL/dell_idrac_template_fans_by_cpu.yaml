@@ -1,0 +1,51 @@
+- platform: template
+  sensors:
+    server_fans_speed:
+      value_template: >
+           {{ (( states('sensor.rawdellserverfan1') | float +
+                 states('sensor.rawdellserverfan2') | float +
+                 states('sensor.rawdellserverfan3') | float +
+                 states('sensor.rawdellserverfan4') | float +
+                 states('sensor.rawdellserverfan5') | float +
+                 states('sensor.rawdellserverfan6') | float +
+                 states('sensor.rawdellserverfan7') | float +
+                 states('sensor.rawdellserverfan1b') | float +
+                 states('sensor.rawdellserverfan2b') | float +
+                 states('sensor.rawdellserverfan3b') | float +
+                 states('sensor.rawdellserverfan4b') | float +
+                 states('sensor.rawdellserverfan5b') | float +
+                 states('sensor.rawdellserverfan6b') | float +                 
+                 states('sensor.rawdellserverfan7b') | float) / 14) | round(0) }}
+      unit_of_measurement: RPM
+      friendly_name: "Server Fans Speed (14) Avg"
+      icon_template: mdi:fan
+
+- platform: template
+  sensors:
+    server_fans_cpu1_speed:
+      value_template: >
+           {{ (( states('sensor.rawdellserverfan1') | float +
+                 states('sensor.rawdellserverfan2') | float +
+                 states('sensor.rawdellserverfan3') | float +
+                 states('sensor.rawdellserverfan4') | float +
+                 states('sensor.rawdellserverfan1b') | float +
+                 states('sensor.rawdellserverfan2b') | float +
+                 states('sensor.rawdellserverfan3b') | float) / 7) | round(0) }}
+      unit_of_measurement: RPM
+      friendly_name: "Server CPU1 Fans Speed (7) Avg"
+      icon_template: mdi:fan
+
+- platform: template
+  sensors:
+    server_fans_cpu2_speed:
+      value_template: >
+           {{ (( states('sensor.rawdellserverfan5') | float +
+                 states('sensor.rawdellserverfan6') | float +
+                 states('sensor.rawdellserverfan7') | float +
+                 states('sensor.rawdellserverfan4b') | float +
+                 states('sensor.rawdellserverfan5b') | float +
+                 states('sensor.rawdellserverfan6b') | float +                 
+                 states('sensor.rawdellserverfan7b') | float) / 7) | round(0) }}
+      unit_of_measurement: RPM
+      friendly_name: "Server CPU2 Fans Speed (7) Avg"
+      icon_template: mdi:fan

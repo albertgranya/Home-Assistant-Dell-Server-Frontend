@@ -1,0 +1,52 @@
+# Raw Dell Server Fans
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerFan1
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.12.1.6.1.1
+  unit_of_measurement: RPM
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerFan2
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.12.1.6.1.2
+  unit_of_measurement: RPM
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerFan3
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.12.1.6.1.3
+  unit_of_measurement: RPM
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerFan4
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.12.1.6.1.4
+  unit_of_measurement: RPM
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerFan5
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.12.1.6.1.5
+  unit_of_measurement: RPM
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerFan6
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.12.1.6.1.6
+  unit_of_measurement: RPM
+
+- platform: snmp
+  host: !secret ServerIdracIP
+  port: 161
+  community: public
+  name: RawDellServerFan7
+  baseoid: 1.3.6.1.4.1.674.10892.5.4.700.12.1.6.1.7
+  unit_of_measurement: RPM
+

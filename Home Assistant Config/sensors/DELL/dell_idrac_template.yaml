@@ -1,0 +1,56 @@
+- platform: template
+  sensors:
+    server_power:
+      value_template: "{{states('sensor.RawDellServerPower')}}"
+      unit_of_measurement: W
+      device_class: power
+      friendly_name: "Server Power"
+
+    server_inlet_temperature:
+      value_template: "{{states('sensor.RawDellServerInletTemperature')}}"
+      unit_of_measurement: °C
+      device_class: temperature      
+      friendly_name: "Inlet Temperature"
+
+    server_exhaust_temperature:
+      value_template: "{{states('sensor.RawDellServerExhaustTemperature')}}"
+      unit_of_measurement: °C
+      device_class: temperature      
+      friendly_name: "Exhaust Temperature"
+
+    server_cpu1_temperature:
+      value_template: "{{states('sensor.RawDellServerCPU1Temperature')}}"
+      unit_of_measurement: °C
+      device_class: temperature      
+      friendly_name: "CPU 1 Temperature"
+
+    server_cpu2_temperature:
+      value_template: "{{states('sensor.RawDellServerCPU2Temperature')}}"
+      unit_of_measurement: °C
+      device_class: temperature      
+      friendly_name: "CPU 2 Temperature"
+
+    server_psu_voltage:
+      value_template: "{{states('sensor.RawDellServerPSU1Voltage')}}"
+      unit_of_measurement: V
+      device_class: voltage      
+      friendly_name: "PSU 1 Voltage"
+
+    server_psu2_voltage:
+      value_template: "{{states('sensor.RawDellServerPSU2Voltage')}}"
+      unit_of_measurement: V
+      device_class: voltage      
+      friendly_name: "PSU 2 Voltage"
+
+    server_psu1_current:
+      value_template: "{{states('sensor.RawDellServerPSU1Current')}}"
+      unit_of_measurement: A
+      device_class: current
+      friendly_name: "PSU 1 Current"      
+
+    server_psu2_current:
+      value_template: "{{states('sensor.RawDellServerPSU2Current')}}"
+      unit_of_measurement: A
+      device_class: current
+      friendly_name: "PSU 2 Current"      
+

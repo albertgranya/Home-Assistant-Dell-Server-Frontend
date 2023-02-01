@@ -1,0 +1,87 @@
+- platform: template
+  sensors:
+    server_fan1:
+      value_template: "{{states('sensor.rawdellserverfan1')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 1 RPM"
+      icon_template: mdi:fan
+    server_fan2:
+      value_template: "{{states('sensor.rawdellserverfan2')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 2 RPM"
+      icon_template: mdi:fan
+    server_fan3:
+      value_template: "{{states('sensor.rawdellserverfan3')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 3 RPM"
+      icon_template: mdi:fan
+    server_fan4:
+      value_template: "{{states('sensor.rawdellserverfan4')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 4 RPM"
+      icon_template: mdi:fan
+    server_fan5:
+      value_template: "{{states('sensor.rawdellserverfan5')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 5 RPM"
+      icon_template: mdi:fan
+    server_fan6:
+      value_template: "{{states('sensor.rawdellserverfan6')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 6 RPM"
+      icon_template: mdi:fan
+    server_fan7:
+      value_template: "{{states('sensor.rawdellserverfan7')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 7 RPM"
+      icon_template: mdi:fan
+
+    server_fan1b:
+      value_template: "{{states('sensor.rawdellserverfan1b')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 1B RPM"
+      icon_template: mdi:fan
+    server_fan2b:
+      value_template: "{{states('sensor.rawdellserverfan2b')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 2B RPM"
+      icon_template: mdi:fan
+    server_fan3b:
+      value_template: "{{states('sensor.rawdellserverfan3b')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 3B RPM"
+      icon_template: mdi:fan
+    server_fan4b:
+      value_template: "{{states('sensor.rawdellserverfan4b')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 4B RPM"
+      icon_template: mdi:fan
+    server_fan5b:
+      value_template: "{{states('sensor.rawdellserverfan5b')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 5B RPM"
+      icon_template: mdi:fan
+    server_fan6b:
+      value_template: "{{states('sensor.rawdellserverfan6b')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 6B RPM"
+      icon_template: mdi:fan
+    server_fan7b:
+      value_template: "{{states('sensor.rawdellserverfan7b')}}"
+      unit_of_measurement: RPM
+      device_class: power  
+      friendly_name: "Fan 7B RPM"
+      icon_template: mdi:fan
